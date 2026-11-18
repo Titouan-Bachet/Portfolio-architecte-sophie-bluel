@@ -69,9 +69,9 @@ function displayFilters(listeCategories, travauxAFiltrer) {
 
         button.addEventListener("click", function () {
             activerBouton(button);
-            const travauxFiltres = travauxAFiltrer.filter(function (travail){
-                return travail.categoryId === categorie.id; 
-            }); 
+            const travauxFiltres = travauxAFiltrer.filter(function (travail) {
+                return travail.categoryId === categorie.id;
+            });
             displayWorks(travauxFiltres);
         });
 
@@ -85,6 +85,21 @@ async function init() {
 
     const categoriesRecues = await getCategories();
     displayFilters(categoriesRecues, listeTravaux);
+
+    const token = localStorage.getItem("token");
+
+    if (token) {
+        document.body.classList.add("mode-edition");
+        const lienLogin = document.querySelector("#lien-login");
+        lienLogin.textContent = "logout";
+        lienLogin.addEventListener("click", function (event) {
+            event.preventDefault(); 
+            localStorage.removeItem("token");
+            window.location.href = "index.html"; 
+        }); 
+    } else {
+        console.log("Visiteur");
+    }
 }
 
 init(); 

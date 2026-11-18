@@ -142,10 +142,33 @@ body {
 	font-size: 14px;
 }
 
+.bandeau-edition {
+	height: 59px;
+	background-color: black;
+	color: white;
+	font-size: 16px;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	gap: 11px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
 header {
 	display: flex;
 	justify-content: space-between;
 	margin: 50px 0
+}
+
+body.mode-edition header {
+	margin-top: 97px;
+}
+
+body.mode-edition .bandeau-edition {
+	display: flex;
 }
 
 section {
@@ -252,6 +275,10 @@ li:hover {
 	color: white;
 }
 
+body.mode-edition .filters {
+	display: none;
+}
+
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
@@ -314,7 +341,7 @@ li:hover {
 }
 
 #login a {
-    display: block;
+	display: block;
 	width: fit-content;
 	margin: auto;
 	color: #3D3D3D;
