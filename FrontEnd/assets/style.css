@@ -326,6 +326,12 @@ li:hover {
 	margin: 150px auto 355px;
 }
 
+#erreur-connexion {
+	color: red;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
 input[type="submit"] {
 	font-family: 'Syne';
 	font-weight: 700;
