@@ -388,7 +388,8 @@ body.mode-edition .bouton-modifier {
 	margin-bottom: 20px;
 }
 
-input[type="submit"] {
+input[type="submit"],
+.modale-bouton-ajouter {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
@@ -398,9 +399,108 @@ input[type="submit"] {
 	text-align: center;
 	border-radius: 60px;
 }
+.modale-bouton-ajouter {
+	width: 237px;
+	height: 36px;
+	font-size: 14px;
+	border: none;
+	cursor: pointer;
+	margin: 0;
+}
+
+.modale hr {
+	border: none;
+	border-top: 1px solid #B3B3B3;
+	margin: 63px 0 38px;
+}
 
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
+}
+
+.modale-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modale {
+	background-color: white;
+	width: 630px;
+	min-height: 660px;
+	border-radius: 10px;
+	padding: 60px 105px 0 105px;
+	box-sizing: border-box;
+	text-align: center;
+	position: relative;
+}
+
+.modale-fermer, .modale-retour {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+.modale-fermer {
+	position: absolute;
+	top: 26px;
+	right: 30px;
+}
+
+.modale-retour {
+	position: absolute;
+	top: 26px;
+	left: 30px;
+}
+
+.modale-galerie {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	column-gap: 9px;
+	row-gap: 29px;
+}
+
+.modale-galerie img {
+width: 100%;
+height: 103px;
+object-fit: cover;
+}
+
+.modale-galerie figure {
+	position: relative;
+}
+
+.bouton-supprimer {
+	position: absolute;
+	top: 6px;
+	right: 5px;
+	width: 17px;
+	height: 17px;
+	background-color: black;
+	color: white;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 9px;
+}
+
+.modale h3 { 
+	margin-bottom: 46px;
+}
+
+
+.cache {
+	display: none;
 }

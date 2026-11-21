@@ -34,6 +34,27 @@ function displayWorks(travauxAAfficher) {
     }
 }
 
+function displayModaleWorks(travauxModale) {
+    const galerieModale = document.querySelector(".modale-galerie");
+    galerieModale.innerHTML = "";
+
+    for (const travail of travauxModale) {
+        const figure = document.createElement("figure");
+
+        const img = document.createElement("img");
+        img.src = travail.imageUrl;
+        img.alt = travail.title;
+
+        const boutonSupprimer = document.createElement("button");
+        boutonSupprimer.classList.add("bouton-supprimer");
+        boutonSupprimer.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+
+        figure.appendChild(img);
+        figure.appendChild(boutonSupprimer);
+        galerieModale.appendChild(figure);
+    }
+}
+
 // Mettre en vert le bouton cliqué
 function activerBouton(boutonClique) {
     const tousLesBoutons = document.querySelectorAll(".filters button");
@@ -90,13 +111,14 @@ async function init() {
 
     if (token) {
         document.body.classList.add("mode-edition");
+        displayModaleWorks(listeTravaux);
         const lienLogin = document.querySelector("#lien-login");
         lienLogin.textContent = "logout";
         lienLogin.addEventListener("click", function (event) {
-            event.preventDefault(); 
+            event.preventDefault();
             localStorage.removeItem("token");
-            window.location.href = "index.html"; 
-        }); 
+            window.location.href = "index.html";
+        });
     } else {
         console.log("Visiteur");
     }

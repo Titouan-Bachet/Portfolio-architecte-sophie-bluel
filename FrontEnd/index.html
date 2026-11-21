@@ -86,6 +86,47 @@
 			</ul>
 		</nav>
 	</footer>
+	</footer>
+
+	<div class="modale-overlay">
+
+		<div class="modale" role="dialog" aria-modal="true">
+
+			<button class="modale-fermer" aria-label="Fermer la fenêtre">
+				<i class="fa-solid fa-xmark"></i>
+			</button>
+
+			<div class="modale-vue-galerie">
+				<h3>Galerie photo</h3>
+				<div class="modale-galerie"></div>
+				<hr>
+				<button class="modale-bouton-ajouter">Ajouter une photo</button>
+			</div>
+			<div class="modale-vue-ajout cache">
+				<button class="modale-retour" aria-label="Retour à la galerie">
+					<i class="fa-solid fa-arrow-left"></i>
+				</button>
+				<h3>Ajout photo</h3>
+				<form class="modale-formulaire">
+					<div class="zone-ajout-image">
+						<i class="fa-regular fa-image"></i>
+						<label for="image" class="bouton-ajout-image">+ Ajouter photo</label>
+						<input type="file" id="image" name="image" accept="image/png, image/jpeg">
+						<p>jpg, png : 4mo max</p>
+					</div>
+
+					<label for="titre">Titre</label>
+					<input type="text" id="titre" name="titre">
+
+					<label for="categorie">Catégorie</label>
+					<select id="categorie" name="categorie"></select>
+					<hr>
+					<input type="submit" value="Valider">
+				</form>
+			</div>
+
+		</div>
+	</div>
 </body>
 
 </html>
